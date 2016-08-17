@@ -48,9 +48,6 @@
 	
 	<target name="docs" depends="report">
 			<echo message="genration java docs"></echo>
-			<javadoc destdir="${docs}" sourcepath ="${src}">
-				<classpath refid="myclasspath"></classpath>
-			</javadoc>
 	</target>
 	
 	<target name="package" depends="docs">
