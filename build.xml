@@ -1,6 +1,6 @@
 <project name="persistent project" default="all">
 	
-	<property name="myproject" value="C:/myproject"/>
+	<property name="myproject" value="/myproject"/>
 	<property name="src" value="${myproject}/src"/>
 	<property name="bin" value="${myproject}/bin"></property>
 	<property name="test" value="${myproject}/test"></property>
