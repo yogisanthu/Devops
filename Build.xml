@@ -1,0 +1,66 @@
+<project name="persistent project" default="all">
+	
+	<property name="myproject" value="C:/myproject"/>
+	<property name="src" value="${myproject}/src"/>
+	<property name="bin" value="${myproject}/bin"></property>
+	<property name="test" value="${myproject}/test"></property>
+	<property name="report" value="${myproject}/report"></property>
+	<property name="docs" value="${myproject}/docs"></property>
+	<property name="deploy" value="${myproject}/deploy"></property>
+	
+
+	<target name="clean">
+		<echo message="cleaning"></echo>
+		<delete dir ="${myproject}"></delete>
+	</target>
+	
+	<target name="init" depends="clean">
+		<echo message="initializing"></echo>
+		<mkdir dir = "${myproject}"/>
+		<mkdir dir = "${src}"/>
+		<mkdir dir = "${bin}"/>
+		<mkdir dir = "${test}"/>
+		<mkdir dir = "${report}"/>
+		<mkdir dir = "${docs}"/>
+		<mkdir dir = "${deploy}"/>
+	</target>
+	
+	<target name="copy" depends="init">
+		<echo message="copy code from source directory"></echo>
+		<copy todir ="${src}">
+			<fileset dir ="src" includes="**/*.java"/>
+		</copy>
+	</target>
+	
+	<target name="compile" depends="copy">
+			<echo message="compiling source code"></echo>
+			<javac includeantruntime="false" srcdir="${src}" destdir="${bin}">
+			</javac>
+	</target>
+	
+	<target name="test" depends="compile">
+			<echo message="testing code using junit testcases"></echo>
+	</target>
+	
+	<target name="report" depends="test">
+			<echo message="generation reports"></echo>
+	</target>
+	
+	<target name="docs" depends="report">
+			<echo message="genration java docs"></echo>
+			
+	</target>
+	
+	<target name="package" depends="docs">
+			<echo message="packaging"></echo>
+	</target>
+	
+	<target name="deploy" depends="package">
+			<echo message="deploying"></echo>
+	</target>
+	
+	<target name="all" depends="deploy">
+			<echo message="welcome to ant build bile"></echo>
+	</target>
+
+</project>
