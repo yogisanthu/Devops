@@ -1,22 +1,22 @@
 <project name="persistent project" default="all">
 	
-	<property name="myproject" value="/myproject1"/>
-	<property name="src" value="${myproject1}/src"/>
-	<property name="bin" value="${myproject1}/bin"></property>
-	<property name="test" value="${myproject1}/test"></property>
-	<property name="report" value="${myproject1}/report"></property>
-	<property name="docs" value="${myproject1}/docs"></property>
-	<property name="deploy" value="${myproject1}/deploy"></property>
+	<property name="myproject" value="/myproject"/>
+	<property name="src" value="${myproject}/src"/>
+	<property name="bin" value="${myproject}/bin"></property>
+	<property name="test" value="${myproject}/test"></property>
+	<property name="report" value="${myproject}/report"></property>
+	<property name="docs" value="${myproject}/docs"></property>
+	<property name="deploy" value="${myproject}/deploy"></property>
 	
 
 	<target name="clean">
 		<echo message="cleaning"></echo>
-		<delete dir ="${myproject1}"></delete>
+		<delete dir ="${myproject}"></delete>
 	</target>
 	
 	<target name="init" depends="clean">
 		<echo message="initializing"></echo>
-		<mkdir dir = "${myproject1}"/>
+		<mkdir dir = "${myproject}"/>
 		<mkdir dir = "${src}"/>
 		<mkdir dir = "${bin}"/>
 		<mkdir dir = "${test}"/>
