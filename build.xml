@@ -1,6 +1,6 @@
 <project name="persistent project" default="all">
 	
-	<property name="myprojectn" value=""/>
+	<property name="myprojectn" value="myprojectn"/>
 	<property name="src" value="${myprojectn}/src"/>
 	<property name="bin" value="${myprojectn}/bin"></property>
 	<property name="test" value="${myprojectn}/test"></property>
